@@ -20,7 +20,7 @@ Xu, Rongtao, Changwei Wang, Shibiao Xu, Weiliang Meng, and Xiaopeng Zhang. "Dc-N
 ### Week #03
 论文题目：
 
-Marrakchi, Yassine, Osama Makansi, and Thomas Brox. "Fighting Class Imbalance With contrastive Learning." Paper presented at the MICCAI 2021, Cham, 2021.  
+Marrakchi, Yassine, Osama Makansi, and Thomas Brox. "Fighting Class Imbalance With Contrastive Learning." Paper presented at the MICCAI 2021, Cham, 2021.  
 
 阅读PPT：  
 
