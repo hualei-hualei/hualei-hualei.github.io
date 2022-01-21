@@ -30,17 +30,17 @@ Marrakchi, Yassine, Osama Makansi, and Thomas Brox. "Fighting Class Imbalance Wi
 
 讲解PPT：  
 
-## Week #02
+### Week #02
 第2章：线性代数
 
 讲解PPT：
 
-## Week #03：
+### Week #03：
 第3章：概率与信息论
 
 讲解PPT：
 
-## Week #04:
+### Week #04:
 第4章：数值计算
 
 讲解PPT：
