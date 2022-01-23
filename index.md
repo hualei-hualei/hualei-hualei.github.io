@@ -7,6 +7,7 @@
 | 1 | / | 王琦 |
 | 2 | 袁成雨 | 王琦 |
 | 3 | 王琦 | 袁成雨 |
+| 4 | 袁成雨 | 袁成雨 |
 
 ## 2. 论文阅读记录
 ### Week #02  
@@ -24,6 +25,14 @@ Marrakchi, Yassine, Osama Makansi, and Thomas Brox. "Fighting Class Imbalance Wi
 
 阅读PPT：  
 
+### Week #04
+论文题目：
+
+Ronneberger, Olaf, Philipp Fischer, and Thomas Brox. "U-Net: Convolutional Networks for Biomedical Image Segmentation." Paper presented at the International Conference on Medical image computing and computer-assisted intervention, 2015.
+
+阅读PPT：
+
+
 ## 3. 《深度学习》阅读记录
 ### Week #01
 第1章：引言
@@ -35,12 +44,12 @@ Marrakchi, Yassine, Osama Makansi, and Thomas Brox. "Fighting Class Imbalance Wi
 
 讲解PPT：
 
-### Week #03：
+### Week #03
 第3章：概率与信息论
 
 讲解PPT：
 
-### Week #04:
+### Week #04
 第4章：数值计算
 
 讲解PPT：
