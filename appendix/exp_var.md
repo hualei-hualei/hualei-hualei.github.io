@@ -168,5 +168,16 @@ $$
   - $\rho < 0$: $X$与$Y$负相关
 
 #### 2. $X, Y$为向量
+向量$X \in \mathbb{R}^{m}, Y \in \mathbb{R}^{n}$的每一个分量均为随机变量，它们之间的协方差矩阵(Covariance matrix)为：
+
+$$
+\begin{equation}
+\begin{aligned}
+
+
+
+\end{aligned}
+\end{equation}
+$$
 
 #### 3. $X, Y$为矩阵

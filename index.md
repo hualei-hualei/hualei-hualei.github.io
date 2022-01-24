@@ -68,4 +68,4 @@ Ronneberger, Olaf, Philipp Fischer, and Thomas Brox. "U-Net: Convolutional Netwo
 讲解PPT：
 
 ## 4. 补充知识
-### 4.1 [随机变量的数学期望、方差和协方差矩阵](./appendix/exp_var.pdf)
+### 4.1 [随机变量的数学期望、方差和协方差矩阵](./appendix/exp_var.html)
