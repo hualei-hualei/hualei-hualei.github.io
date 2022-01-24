@@ -1,8 +1,8 @@
 ### 1 随机变量$X$的数学期望、方差
-#### （1）$X$为标量
+#### （1）标量
 对随机变量$X \in \mathbb{R}$，分两种情况讨论：
 
-（1.1）$X$为离散型随机变量
+（1.1）离散型随机变量
 
 令$X$的取值为$\{x_1, x_2, \cdots , x_n\}$，这些取值点上对应的概率为$\{p_1, p_2, \cdots, p_n\}$。
 
@@ -27,9 +27,11 @@ Var(X) &= E\{(X - E(X))^2\}\\
 \end{equation}
 $$
 
-（1.2）$X$为连续型随机变量
+（1.2）连续型随机变量
 
-令$X$的概率密度函数为$f(x)$，$X$的定义域为$[a, b]$。则$X$的数学期望为：
+令$X$的概率密度函数为$f(x)$，$X$的定义域为$[a, b]$。
+
+则$X$的数学期望为：
 $$
 \begin{equation}
 \begin{aligned}
@@ -49,7 +51,7 @@ Var(X) &= \int_a^b (x - E(X))^2 dx \\
 \end{equation}
 $$
 
-#### （2）$X$为向量
+#### （2）向量
 记$X \in \mathbb{R}^{n}$，$X = [X_1, X_2, \cdots, X_n]^T$，其中$X_i, (i=1,2, \cdots, n),$均为随机变量。
 
 $X$的数学期望为各个分量的数学期望：
@@ -65,17 +67,47 @@ E(X) &= E \left( \left[ \begin{array}{c} X_1\\ X_2\\ \vdots\\ X_n \end{array}\ri
 \end{equation}
 $$
 
-$X$的方差：
+$aX$的期望（其中$a$为标量）:
+$$
+\begin{equation}
+\begin{aligned}
+E\left( aX \right) &= E\left( \left[ \begin{array}{c}
+                                          a X_1 \\
+                                          a X_2 \\
+                                          \vdots \\
+                                          a X_n
+                                     \end{array} \right] \right)\\
+&= a E(X)
+\end{aligned}
+\end{equation}
+$$
+
+$X$的方差，是一个矩阵：
 
 $$
 \begin{equation}
 \begin{aligned}
 Var(X) &= E \left( \left( X - E(X) \right) \left( X - E(X) \right)^T \right) \\
-&= E\left( \left[ \begin{array}{c} X_1 - \mu_1 \\ X_2-\mu_2 \\ \vdots \\X_n-\mu_n \end{array} \right] [X_1 - \mu_1, X_2 - \mu_2, \cdots, X_n - \mu_n] \right)
+&= E\left(
+  \left[ \begin{array}{c} X_1 - \mu_1 \\ X_2-\mu_2 \\ \vdots \\X_n-\mu_n \end{array} \right] [X_1 - \mu_1, X_2 - \mu_2, \cdots, X_n - \mu_n] \right) \\
+&= E\left( \left[ \begin{array}{cccc} 
+(X_1 - \mu_1)^2 & (X_1 - \mu_1)(X_2 - \mu_2) & \cdots & (X_1 - \mu_1)(X_n - \mu_n) \\
+(X_2 - \mu_2)(X_1 - \mu_1) & (X_2 - \mu_2)^2 & \cdots & (X_2 - \mu_2)(X_n - \mu_n) \\
+\vdots & \vdots & \vdots & \vdots \\
+(X_n - \mu_n)(X_1 - \mu_1) & (X_n - \mu_n)(X_2 - \mu_2) & \cdots & (X_n - \mu_n)^2 
+ \end{array} \right] \right) \\
+ &= \left[
+\begin{array}{cccc}
+Var(X_1) & Cov(X_1, X_2) & \cdots & Cov(X_1, X_n)\\
+Cov(X2, X_1) & Var(X_2) & \cdots & Cov(X_2, X_n)\\
+\vdots & \vdots & \vdots & \vdots\\
+Cov(X_n, X_1) & Cov(X_n, X_2) & \cdots & Var(X_n)
+\end{array}
+\right]
 \end{aligned}
 \end{equation}
 $$
-#### （3）$X$为矩阵
+#### （3）矩阵
 记随机变量$X \in \mathbb{R}^{m \times n}$为：
 
 $$
@@ -104,8 +136,8 @@ Var(X) &= Var\left( \left[ \begin{array}{cccc} X_{1,1} & X_{1, 2} & \cdots & X_{
 \end{equation}
 $$
 
-### 随机变量的协方差
-#### 1. 标量的协方差
+### 2. 随机变量之间的协方差
+#### (1) 标量
 - 协方差的定义：(维基百科关于协方差的定义)
 
 In probability theory and statistics, covariance is a measure of the joint variability of two random variables. If the greater values of one variable mainly correspond with the greater values of the other variable, and the same holds for the lesser values (that is, the variables tend to show similar behavior), the covariance is positive. In the opposite case, when the greater values of one variable mainly correspond to the lesser values of the other, (that is, the variables tend to show opposite behavior), the covariance is negative. The sign of the covariance therefore shows the tendency in the linear relationship between the variables. The magnitude of the covariance is not easy to interpret because it is not normalized and hence depends on the magnitudes of the variables. The normalized version of the covariance, the correlation coefficient, however, shows by its magnitude the strength of the linear relation.
@@ -169,7 +201,7 @@ $$
   - $\rho = 0$：$X$与$Y$不相关，即X与Y线性独立
   - $\rho < 0$: $X$与$Y$负相关
 
-#### 2. 向量的方差、协方差
+#### (2) 向量
 向量$X \in \mathbb{R}^{m}, Y \in \mathbb{R}^{n}$的每一个分量均为随机变量，它们之间的协方差矩阵(Covariance matrix)为：
 $$
 \begin{equation}
@@ -184,7 +216,7 @@ Cov(X_m, Y_1) & Cov(X_m, Y_2) & \cdots & Cov(X_m, Y_n)\\
 \end{equation}
 $$
 
-#### 3. $X, Y$为矩阵
+#### (3) 矩阵
 
 
 ### 参考资料
