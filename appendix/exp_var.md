@@ -54,20 +54,20 @@ $$
 #### （2）向量
 记$X \in \mathbb{R}^{n}$，$X = [X_1, X_2, \cdots, X_n]^T$，其中$X_i, (i=1,2, \cdots, n),$均为随机变量。
 
-$X$的数学期望为各个分量的数学期望：
+- $X$的数学期望为各个分量的数学期望：
 
 $$
 \begin{equation}
 \begin{aligned}
 E(X) &= E \left( \left[ \begin{array}{c} X_1\\ X_2\\ \vdots\\ X_n \end{array}\right] \right)\\
 &=\left[ \begin{array}{c} E(X_1) \\ E(X_2) \\ \vdots \\ E(X_n) \end{array}\right] \\
-&= \left[ \begin{array}{c} \mu_1 \\ \mu_2 \\ \vdots \\ \mu_n\end{array}\right]
-\\
+&= \left[ \begin{array}{c} \mu_1 \\ \mu_2 \\ \vdots \\ \mu_n\end{array}\right]\\
+&= \mu
 \end{aligned}
 \end{equation}
 $$
-
-$aX$的期望（其中$a$为标量）:
+此处$\mu \in \mathbb{R}^{n}$为向量。
+- $aX$的期望（其中$a$为标量）:
 $$
 \begin{equation}
 \begin{aligned}
@@ -77,12 +77,13 @@ E\left( aX \right) &= E\left( \left[ \begin{array}{c}
                                           \vdots \\
                                           a X_n
                                      \end{array} \right] \right)\\
-&= a E(X)
+&= a E(X)\\
+&= a \mu
 \end{aligned}
 \end{equation}
 $$
 
-$X$的方差，是一个矩阵：
+- $X$的方差，描述$X$内各个分量之间的方差，是一个矩阵：
 
 $$
 \begin{equation}
@@ -99,11 +100,45 @@ Var(X) &= E \left( \left( X - E(X) \right) \left( X - E(X) \right)^T \right) \\
  &= \left[
 \begin{array}{cccc}
 Var(X_1) & Cov(X_1, X_2) & \cdots & Cov(X_1, X_n)\\
-Cov(X2, X_1) & Var(X_2) & \cdots & Cov(X_2, X_n)\\
+Cov(X_2, X_1) & Var(X_2) & \cdots & Cov(X_2, X_n)\\
 \vdots & \vdots & \vdots & \vdots\\
 Cov(X_n, X_1) & Cov(X_n, X_2) & \cdots & Var(X_n)
 \end{array}
 \right]
+\end{aligned}
+\end{equation}
+$$
+
+- $aX$的方差($a$为标量)：
+$$
+\begin{equation}
+\begin{aligned}
+Var(aX) &= E\left( (aX - a\mu)(aX - a\mu)^{T} \right)\\
+&= E\left( a(X - \mu) \cdot a(X - \mu)^{T} \right)\\
+&= E\left( a^2 (X - \mu)(X - \mu)^T \right)\\
+&= a^2 E\left( (X - \mu)(X - \mu)^T \right)\\
+&= a^2 Var(X)
+\end{aligned}
+\end{equation}
+$$
+
+- $AX$的期望（$A$为常数矩阵）：
+$$
+\begin{equation}
+\begin{aligned}
+E \left( AX \right) &= E \left( \left[ \sum_k a_{i,k} x_k  \right] \right)
+\end{aligned}
+\end{equation}
+$$
+
+- $AX$的方差（$A$为常数矩阵）：
+$$
+\begin{equation}
+\begin{aligned}
+Var(AX) &= E\left( (AX - A\mu)(AX - A\mu)^T \right)\\
+&= E \left( A(X - \mu)(X - \mu)^T A^T \right)\\
+&= A E \left( (X - \mu)(X - \mu)^T \right) A^T\\
+&= A Var(X) A^T
 \end{aligned}
 \end{equation}
 $$
