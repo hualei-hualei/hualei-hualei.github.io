@@ -59,17 +59,19 @@ $$
 \begin{aligned}
 E(X) &= E \left( \left[ \begin{array}{c} X_1\\ X_2\\ \vdots\\ X_n \end{array}\right] \right)\\
 &=\left[ \begin{array}{c} E(X_1) \\ E(X_2) \\ \vdots \\ E(X_n) \end{array}\right] \\
+&= \left[ \begin{array}{c} \mu_1 \\ \mu_2 \\ \vdots \\ \mu_n\end{array}\right]
+\\
 \end{aligned}
 \end{equation}
 $$
 
-$X$的方差为各个分量的方差：
+$X$的方差：
 
 $$
 \begin{equation}
 \begin{aligned}
-Var(X) &= Var\left( \left[ \begin{array}{c} X_1\\ X_2\\ \vdots\\ X_n \end{array} \right] \right) \\
-&= \left[ \begin{array}{c} Var(X_1) \\ Var(X_2) \\ \vdots \\ Var(X_n) \end{array} \right]
+Var(X) &= E \left( \left( X - E(X) \right) \left( X - E(X) \right)^T \right) \\
+&= E\left( \left[ \begin{array}{c} X_1 - \mu_1 \\ X_2-\mu_2 \\ \vdots \\X_n-\mu_n \end{array} \right] [X_1 - \mu_1, X_2 - \mu_2, \cdots, X_n - \mu_n] \right)
 \end{aligned}
 \end{equation}
 $$
@@ -103,7 +105,7 @@ Var(X) &= Var\left( \left[ \begin{array}{cccc} X_{1,1} & X_{1, 2} & \cdots & X_{
 $$
 
 ### 随机变量的协方差
-#### 1. $X, Y$为标量
+#### 1. 标量的协方差
 - 协方差的定义：(维基百科关于协方差的定义)
 
 In probability theory and statistics, covariance is a measure of the joint variability of two random variables. If the greater values of one variable mainly correspond with the greater values of the other variable, and the same holds for the lesser values (that is, the variables tend to show similar behavior), the covariance is positive. In the opposite case, when the greater values of one variable mainly correspond to the lesser values of the other, (that is, the variables tend to show opposite behavior), the covariance is negative. The sign of the covariance therefore shows the tendency in the linear relationship between the variables. The magnitude of the covariance is not easy to interpret because it is not normalized and hence depends on the magnitudes of the variables. The normalized version of the covariance, the correlation coefficient, however, shows by its magnitude the strength of the linear relation.
@@ -167,7 +169,7 @@ $$
   - $\rho = 0$：$X$与$Y$不相关，即X与Y线性独立
   - $\rho < 0$: $X$与$Y$负相关
 
-#### 2. $X, Y$为向量
+#### 2. 向量的方差、协方差
 向量$X \in \mathbb{R}^{m}, Y \in \mathbb{R}^{n}$的每一个分量均为随机变量，它们之间的协方差矩阵(Covariance matrix)为：
 $$
 \begin{equation}
@@ -183,3 +185,11 @@ Cov(X_m, Y_1) & Cov(X_m, Y_2) & \cdots & Cov(X_m, Y_n)\\
 $$
 
 #### 3. $X, Y$为矩阵
+
+
+### 参考资料
+[1] http://www.utstat.toronto.edu/~brunner/oldclass/appliedf11/handouts/2101f11RandomVectorsMVN.pdf
+
+[2] https://en.wikipedia.org/wiki/Covariance
+
+[3] https://en.wikipedia.org/wiki/Pearson_correlation_coefficient
