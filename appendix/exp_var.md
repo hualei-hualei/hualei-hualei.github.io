@@ -137,7 +137,9 @@ $$
   $$f_Y(y_i) = \sum_j f(x_j, y_i)$$
   - $X, Y$的协方差为
   $$
+  \begin{equation}
   Cov(X, Y) = \sum_{i, j} x_i y_j f(x_i, y_j) - \sum_i x_i (\sum_j f(x_i, y_j))
+  \end{equation}
   $$
 
 - 当$f(x, y)$为连续函数时
@@ -147,8 +149,23 @@ $$
   $$f_Y(y) = \int f(x, y) dx$$
   - $X, Y$的协方差为
   $$
-  Cov(X, Y) = \int\int f(x, y)dxdy - 
+  \begin{equation}
+  \begin{aligned}
+  Cov(X, Y) &= \int\int f(x, y)dxdy \\ 
+  &- \int x f_X(x) dx \int y f_Y(y) dy
+  \end{aligned}
+  \end{equation}
   $$
+
+- 相关系数([covariance coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient))
+$$
+\begin{equation}
+\rho = \frac{Cov(X, Y)}{\sqrt{Var(X)}\times \sqrt{Var(Y)}}
+\end{equation}
+$$
+  - $\rho > 0$：$X$与$Y$正相关
+  - $\rho = 0$：$X$与$Y$不相关，即X与Y线性独立
+  - $\rho < 0$: $X$与$Y$负相关
 
 #### 2. $X, Y$为向量
 
