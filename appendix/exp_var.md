@@ -169,13 +169,15 @@ $$
 
 #### 2. $X, Y$为向量
 向量$X \in \mathbb{R}^{m}, Y \in \mathbb{R}^{n}$的每一个分量均为随机变量，它们之间的协方差矩阵(Covariance matrix)为：
-
 $$
 \begin{equation}
 \begin{aligned}
-
-
-
+Cov(X, Y) &= Cov\left( \left[ \begin{array}{c} X_1\\ X_2\\ \vdots\\ X_n \end{array} \right], \left[ \begin{array}{c} Y_1\\ Y_2\\ \vdots\\ Y_n \end{array} \right]\right) \\
+&= \left[ \begin{array}{cccc}  Cov(X_1, Y_1) & Cov(X_1, Y_2) & \cdots & Cov(X_1, Y_n)\\
+Cov(X_2, Y_1) & Cov(X_2, Y_2) & \cdots & Cov(X_2, Y_n)\\
+\vdots & \vdots & \vdots & \vdots\\
+Cov(X_m, Y_1) & Cov(X_m, Y_2) & \cdots & Cov(X_m, Y_n)\\
+\end{array} \right]
 \end{aligned}
 \end{equation}
 $$
