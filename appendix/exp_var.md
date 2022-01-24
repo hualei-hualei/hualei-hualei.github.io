@@ -101,3 +101,55 @@ Var(X) &= Var\left( \left[ \begin{array}{cccc} X_{1,1} & X_{1, 2} & \cdots & X_{
 \end{aligned}
 \end{equation}
 $$
+
+### 随机变量的协方差
+#### 1. $X, Y$为标量
+- 协方差的定义：(维基百科关于协方差的定义)
+
+In probability theory and statistics, covariance is a measure of the joint variability of two random variables. If the greater values of one variable mainly correspond with the greater values of the other variable, and the same holds for the lesser values (that is, the variables tend to show similar behavior), the covariance is positive. In the opposite case, when the greater values of one variable mainly correspond to the lesser values of the other, (that is, the variables tend to show opposite behavior), the covariance is negative. The sign of the covariance therefore shows the tendency in the linear relationship between the variables. The magnitude of the covariance is not easy to interpret because it is not normalized and hence depends on the magnitudes of the variables. The normalized version of the covariance, the correlation coefficient, however, shows by its magnitude the strength of the linear relation.
+
+- 协方差的前提要求
+$X$和$Y$之间存在联合概率分布$f(x, y)$
+
+- 协方差的作用
+  - 度量两个随机变量$X$和$Y$之间的联合变异性
+  - 协方差的符号
+    - 为正：$X$与$Y$正相关
+    - 为负：$X$与$Y$负相关
+  - 协方差的绝对值：没有实际意义
+  - 相关系数：是协方差的归一化形式，表明$X$和$Y$之间的线性相关性
+
+- 协方差公式
+
+$$
+\begin{equation}
+\begin{aligned}
+Cov(X, Y) &= E((X - E(X))(Y - E(Y))) \\
+&= E(XY) - E(X)E(Y)
+\end{aligned}
+\end{equation}
+$$
+
+- 当$f(x, y)$为离散函数时
+  - $X$的概率质量函数为：
+  $$f_X(x_i) = \sum_j f(x_i, y_j)$$
+  - $Y$的概率质量函数为：
+  $$f_Y(y_i) = \sum_j f(x_j, y_i)$$
+  - $X, Y$的协方差为
+  $$
+  Cov(X, Y) = \sum_{i, j} x_i y_j f(x_i, y_j) - \sum_i x_i (\sum_j f(x_i, y_j))
+  $$
+
+- 当$f(x, y)$为连续函数时
+  - $X$的概率密度函数为：
+  $$f_X(x) = \int f(x, y) dy$$
+  - $Y$的概率密度函数为：
+  $$f_Y(y) = \int f(x, y) dx$$
+  - $X, Y$的协方差为
+  $$
+  Cov(X, Y) = \int\int f(x, y)dxdy - 
+  $$
+
+#### 2. $X, Y$为向量
+
+#### 3. $X, Y$为矩阵
