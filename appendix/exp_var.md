@@ -83,12 +83,13 @@ E\left( aX \right) &= E\left( \left[ \begin{array}{c}
 \end{equation}
 $$
 
-- $X$的方差，描述$X$内各个分量之间的方差，是一个矩阵：
+- $X$的方差，描述$X$内各个分量之间的方差，是一个矩阵。又被称为[协方差矩阵(covariance matrix)](https://en.wikipedia.org/wiki/Covariance_matrix)：
 
 $$
 \begin{equation}
 \begin{aligned}
 Var(X) &= E \left( \left( X - E(X) \right) \left( X - E(X) \right)^T \right) \\
+&= E((X - \mu)(X - \mu)^T)\\
 &= E\left(
   \left[ \begin{array}{c} X_1 - \mu_1 \\ X_2-\mu_2 \\ \vdots \\X_n-\mu_n \end{array} \right] [X_1 - \mu_1, X_2 - \mu_2, \cdots, X_n - \mu_n] \right) \\
 &= E\left( \left[ \begin{array}{cccc} 
@@ -104,7 +105,8 @@ Cov(X_2, X_1) & Var(X_2) & \cdots & Cov(X_2, X_n)\\
 \vdots & \vdots & \vdots & \vdots\\
 Cov(X_n, X_1) & Cov(X_n, X_2) & \cdots & Var(X_n)
 \end{array}
-\right]
+\right]\\
+&= \Sigma
 \end{aligned}
 \end{equation}
 $$
@@ -117,7 +119,8 @@ Var(aX) &= E\left( (aX - a\mu)(aX - a\mu)^{T} \right)\\
 &= E\left( a(X - \mu) \cdot a(X - \mu)^{T} \right)\\
 &= E\left( a^2 (X - \mu)(X - \mu)^T \right)\\
 &= a^2 E\left( (X - \mu)(X - \mu)^T \right)\\
-&= a^2 Var(X)
+&= a^2 Var(X)\\
+&= a^2 \Sigma
 \end{aligned}
 \end{equation}
 $$
@@ -126,7 +129,12 @@ $$
 $$
 \begin{equation}
 \begin{aligned}
-E \left( AX \right) &= E \left( \left[ \sum_k a_{i,k} x_k  \right] \right)
+E \left( AX \right) &= E \left( \left[ \sum_k a_{i,k} x_k  \right]_i \right) \\
+&= \left[ E\left(\sum_k a_{i, k}x_k \right) \right]_i \\
+&= \left[ \sum_k E(a_{i,k}x_k) \right]_i \\
+&= \left[ \sum_k a_{i,k}E(x_k) \right]_i \\
+&= AE(X)\\
+&= A\mu
 \end{aligned}
 \end{equation}
 $$
@@ -135,10 +143,12 @@ $$
 $$
 \begin{equation}
 \begin{aligned}
-Var(AX) &= E\left( (AX - A\mu)(AX - A\mu)^T \right)\\
+Var(AX) &= E\left( (AX - E(AX))(AX - E(AX))^T \right)\\
+&= E\left( (AX - A\mu)(AX - A\mu)^T \right)\\
 &= E \left( A(X - \mu)(X - \mu)^T A^T \right)\\
 &= A E \left( (X - \mu)(X - \mu)^T \right) A^T\\
-&= A Var(X) A^T
+&= A Var(X) A^T\\
+&= A \Sigma A^T
 \end{aligned}
 \end{equation}
 $$
@@ -147,7 +157,10 @@ $$
 
 $$
 \begin{equation}
-X = \left[ \begin{array}{cccc} X_{1,1} & X_{1, 2} & \cdots & X_{1, n} \\ X_{2, 1} & X_{2, 2} & \cdots & X_{2, n} \\ \vdots & \vdots & \vdots & \vdots \\ X_{m, 1} & X_{m, 2} & \cdots & X_{m, n}\end{array} \right]
+\begin{aligned}
+X &= \left[ \begin{array}{cccc} X_{1,1} & X_{1, 2} & \cdots & X_{1, n} \\ X_{2, 1} & X_{2, 2} & \cdots & X_{2, n} \\ \vdots & \vdots & \vdots & \vdots \\ X_{m, 1} & X_{m, 2} & \cdots & X_{m, n}\end{array} \right] \\
+&= [ X_{i, j}]
+\end{aligned}
 \end{equation}
 $$
 
@@ -156,11 +169,12 @@ $$
 \begin{equation}
 \begin{aligned}
 E(X) &= E\left( \left[ \begin{array}{cccc} X_{1,1} & X_{1, 2} & \cdots & X_{1, n} \\ X_{2, 1} & X_{2, 2} & \cdots & X_{2, n} \\ \vdots & \vdots & \vdots & \vdots \\ X_{m, 1} & X_{m, 2} & \cdots & X_{m, n}\end{array} \right] \right) \\
-&= \left[ \begin{array}{cccc} E(X_{1,1}) & E(X_{1, 2}) & \cdots & E(X_{1, n}) \\ E(X_{2, 1}) & E(X_{2, 2}) & \cdots & E(X_{2, n}) \\ \vdots & \vdots & \vdots & \vdots \\ E(X_{m, 1}) & E(X_{m, 2}) & \cdots & E(X_{m, n})\end{array} \right]
+&= \left[ \begin{array}{cccc} E(X_{1,1}) & E(X_{1, 2}) & \cdots & E(X_{1, n}) \\ E(X_{2, 1}) & E(X_{2, 2}) & \cdots & E(X_{2, n}) \\ \vdots & \vdots & \vdots & \vdots \\ E(X_{m, 1}) & E(X_{m, 2}) & \cdots & E(X_{m, n})\end{array} \right] \\
+&= [E(X_{i,j})]
 \end{aligned}
 \end{equation}
 $$
-
+<!--
 $X$的方差定义为：
 $$
 \begin{equation}
@@ -170,6 +184,7 @@ Var(X) &= Var\left( \left[ \begin{array}{cccc} X_{1,1} & X_{1, 2} & \cdots & X_{
 \end{aligned}
 \end{equation}
 $$
+-->
 
 ### 2. 随机变量之间的协方差
 #### (1) 标量
@@ -236,6 +251,7 @@ $$
   - $\rho = 0$：$X$与$Y$不相关，即X与Y线性独立
   - $\rho < 0$: $X$与$Y$负相关
 
+<!--
 #### (2) 向量
 向量$X \in \mathbb{R}^{m}, Y \in \mathbb{R}^{n}$的每一个分量均为随机变量，它们之间的协方差矩阵(Covariance matrix)为：
 $$
@@ -252,7 +268,7 @@ Cov(X_m, Y_1) & Cov(X_m, Y_2) & \cdots & Cov(X_m, Y_n)\\
 $$
 
 #### (3) 矩阵
-
+-->
 
 ### 参考资料
 [1] http://www.utstat.toronto.edu/~brunner/oldclass/appliedf11/handouts/2101f11RandomVectorsMVN.pdf
