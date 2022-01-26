@@ -270,9 +270,57 @@ $$
 #### (3) 矩阵
 -->
 
+### 3. [正态分布/高斯分布, Normal distribution](https://en.wikipedia.org/wiki/Normal_distribution)
+- $X$为标量
+若随机变量$X \in \mathbb{R}$服从正态分布，其概率密度函数为：
+$$
+\begin{equation}
+f(x) = \frac{1}{\sigma \sqrt{2\pi}} exp\left[ -\frac{1}{2} \frac{(x - \mu)^2}{ \sigma^2 } \right]
+\end{equation}
+$$
+  - 记作：
+  $$
+  \begin{equation}
+  X \thicksim \mathcal{N}(\mu, \sigma^2)
+  \end{equation}
+  $$
+  其中， $\mu$为$X$的期望，$\sigma^2$为方差。
+  - $\frac{(X - \mu) ^ 2}{\sigma ^ 2}$服从自由度为1的卡方分布，即：
+$$
+\begin{equation}
+\frac{(X - \mu)^2}{\sigma ^2} \thicksim \chi(1)
+\end{equation}
+$$
+
+
+- $X$为向量
+
+如果向量$X=[X_1, X_2, \cdots, X_k]$的所有分量$x_i, (i=1,2,\cdots, k),$的联合概率分布服从正态分布，此时称$X$服从[多变量正态分布、多变量高斯分布、联合正态分布](https://en.wikipedia.org/wiki/Multivariate_normal_distribution)。
+记为：
+$$
+\begin{equation}
+X \thicksim \mathcal{N}(\mu, \Sigma)
+\end{equation}
+$$
+
+其概率密度函数为：
+$$
+\begin{equation}
+\begin{aligned}
+f_X(x_1, x_2, \cdots, x_k) &= \frac{1}{\sqrt{(2\pi)^k |\Sigma|}} exp\left( -\frac{1}{2}(X - \mu)^T \Sigma ^{-1} (X - \mu) \right) 
+\\
+&= \frac{1}{|\Sigma|^{\frac{1}{2}} (2\pi)^{\frac{k}{2}}} exp\left[ -\frac{1}{2} (X - \mu)^T \Sigma^{-1} (X - \mu) \right]
+\end{aligned}
+\end{equation}
+$$
+
+其中$|\Sigma|$为$\Sigma$的行列式, $\Sigma_{ij}=Cov(X_i, X_j)$。
+
 ### 参考资料
 [1] http://www.utstat.toronto.edu/~brunner/oldclass/appliedf11/handouts/2101f11RandomVectorsMVN.pdf
 
 [2] https://en.wikipedia.org/wiki/Covariance
 
 [3] https://en.wikipedia.org/wiki/Pearson_correlation_coefficient
+
+[4] https://en.wikipedia.org/wiki/Multivariate_normal_distribution
