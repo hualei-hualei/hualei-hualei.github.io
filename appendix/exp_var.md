@@ -295,15 +295,16 @@ $$
 
 - $X$为向量
 
-如果向量$X=[X_1, X_2, \cdots, X_k]$的所有分量$x_i, (i=1,2,\cdots, k),$的联合概率分布服从正态分布，此时称$X$服从[多变量正态分布、多变量高斯分布、联合正态分布](https://en.wikipedia.org/wiki/Multivariate_normal_distribution)。
+如果向量$X=[X_1, X_2, \cdots, X_k]$的所有分量$X_i, (i=1,2,\cdots, k),$的联合概率分布服从正态分布，此时称$X$服从[多变量正态分布、多变量高斯分布、联合正态分布](https://en.wikipedia.org/wiki/Multivariate_normal_distribution)。
 记为：
 $$
 \begin{equation}
 X \thicksim \mathcal{N}(\mu, \Sigma)
 \end{equation}
 $$
+其中，$\mu = E(X)$, $\Sigma_{ij} = Cov(X_i, X_j)$。
 
-其概率密度函数为：
+$X$的概率密度函数为：
 $$
 \begin{equation}
 \begin{aligned}
@@ -314,7 +315,7 @@ f_X(x_1, x_2, \cdots, x_k) &= \frac{1}{\sqrt{(2\pi)^k |\Sigma|}} exp\left( -\fra
 \end{equation}
 $$
 
-其中$|\Sigma|$为$\Sigma$的行列式, $\Sigma_{ij}=Cov(X_i, X_j)$。
+其中$|\Sigma|$为$\Sigma$的行列式。
 
 ### 参考资料
 [1] http://www.utstat.toronto.edu/~brunner/oldclass/appliedf11/handouts/2101f11RandomVectorsMVN.pdf
