@@ -22,7 +22,8 @@
 | 4 | 袁成雨 | 袁成雨 | / | / |
 | 5 | 王琦 | / | 苏歆琪 | / |
 | 6 | / | / | / | 王琦 |
-| 7 | 春节假期 | / | / | / |
+| 7 | 春节假期 | 1.30 - 2.5 | / | / |
+| 8 | 春节假期 | 2.6 - 2.12 | / | / |
 
 ## 2. 论文阅读记录
 ### Week #02  
@@ -71,6 +72,8 @@ Ronneberger, Olaf, Philipp Fischer, and Thomas Brox. "U-Net: Convolutional Netwo
 
 ## 4. 集体学习
 1. 李宏毅：机器学习，[第1-2讲，机器学习&深度学习基本概念](https://www.bilibili.com/video/BV1Wv411h7kN?p=2)
+2. 李宏毅：机器学习，[第3、5、6、8讲，深度学习简介&PyTorch简介](https://www.bilibili.com/video/BV1Wv411h7kN?p=8)
 
 ## 5. 补充知识
 ### (1) [随机变量的数学期望、方差和协方差矩阵](./appendix/exp_var.html)
+### (2) [随机变量的导数](./appendix/vec_der.html)
