@@ -31,7 +31,7 @@ $$
 $$
 $\triangledown f$称为$f(\mathbf{x})$的**梯度**。
 
-- [$\mathbf{x} \in \mathbb{R}^{p \times q}$为矩阵](https://en.wikipedia.org/wiki/Matrix_calculus#Scalar-by-matrix)
+- [$\mathbf{x} \in \mathbb{R}^{p \times q}$为矩阵](https://en.wikipedia.org/wiki/Matrix_calculus#Scalar-by-matrix)（标量-矩阵）
 $$
 \begin{equation}
 \frac{df(\mathbf{x})}{d \mathbf{x}} = \left[
@@ -126,6 +126,122 @@ $$
                         \frac{df_{m1}(x)}{dx} & \frac{df_{m2}(x)}{dx} & \cdots & \frac{df_{mn}(x)}{dx}
                     \end{array}
                     \right]
+\end{equation}
+$$
+
+## 4. 导数的性质
+- $f(x)$为一次函数
+
+$$
+\begin{equation}
+\begin{aligned}
+\frac{\partial a^TX}{\partial X} &= \frac{\partial \sum_{i=1}^{n} a_i X_i}{\partial X} \\
+                                 &= \left[
+                                                                \begin{array}{c}
+                                                                \frac{\partial \sum_{i=1}^{n} a_i X_i}{\partial X_1}\\
+                                                                \frac{\partial \sum_{i=1}^{n} a_i X_i}{\partial X_2} \\
+                                                                \vdots \\
+                                                                \frac{\partial \sum_{i=1}^{n} a_i X_i}{\partial X_n}
+                                                                \end{array}
+                                                               \right] \\
+                                &= \left[
+                                    \begin{array}{c}
+                                        a_1 \\
+                                        a_2 \\
+                                        \vdots \\
+                                        a_n
+                                    \end{array}
+                                    \right] \\
+                                &= a
+\end{aligned}
+\end{equation}
+$$
+
+- $f(x)$为二次函数
+
+$$
+\begin{equation}
+\begin{aligned}
+\frac{\partial a^TXb}{\partial X}
+    &= \frac{\partial \left( \begin{array}{c}
+                                     a_1 X_{11} b_1 &+ & a_1 X_{12} b_2 &+ \cdots & +a_1 X_{1q} b_q +\\
+                                     a_2 X_{21} b_1 &+ &a_2 X_{22} b_2 &+ \cdots &+ a_2 X_{2q} b_q +\\
+                                     \vdots & &\vdots & &\vdots\\
+                                     a_p X_{p1} b_1 &+ &a_p X_{p2} b_2 &+\cdots &+ a_p X_{pq} b_{q}
+                             \end{array}
+                      \right)
+            }
+            {\partial
+                \left(
+                    \begin{array}{c}
+                        \left[
+                            \begin{array}{c}
+                                X_{11} & X_{12} &\cdots & X_{1q} \\
+                                X_{21} & X_{22} & \cdots & X_{21} \\
+                                \vdots & \vdots & \vdots & \vdots \\
+                                X_{p1} & X_{p2} & \cdots & X_{pq}
+                            \end{array}
+                        \right]
+                    \end{array}
+                \right)
+            } \\
+    &= \left[
+       \begin{array}{c}
+       \frac{\partial ()}{\partial X_{11}} & \frac{\partial ()}{\partial X_{12}} & \cdots & \frac{\partial ()}{\partial X_{1q}} \\
+       \frac{\partial ()}{\partial X_{21}} & \frac{\partial ()}{\partial X_{22}} & \cdots & \frac{\partial ()}{\partial X_{2q}} \\
+       \vdots & \vdots & \vdots & \vdots \\
+       \frac{\partial ()}{\partial X_{p1}} & \frac{\partial ()}{\partial X_{p2}} & \cdots & \frac{\partial ()}{\partial X_{pq}}
+       \end{array} 
+       \right] \\
+    &= \left[
+       \begin{array}{c}
+        a_1 b_1 & a_1 b_2 &\cdots & a_1 b_q \\
+        a_2 b_1 & a_2 b_2 &\cdots & a_2 b_q \\
+        \vdots & \vdots & \vdots & \vdots \\
+        a_p b_1 & a_p b_2 &\cdots & a_p b_q
+       \end{array} 
+       \right] \\
+    &= ab^T
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}
+\begin{aligned}
+\frac{\partial a^T X^T b}{\partial X}
+    &= \frac{\partial \left( \begin{array}{c}
+                                        a_1 X_{11} b_1 &+ & a_1 X_{12} b_2 &+ \cdots & +a_1 X_{1q} b_q +\\
+                                        a_2 X_{21} b_1 &+ &a_2 X_{22} b_2 &+ \cdots &+ a_2 X_{2q} b_q +\\
+                                        \vdots & &\vdots & &\vdots\\
+                                        a_p X_{p1} b_1 &+ &a_p X_{p2} b_2 &+\cdots &+ a_p X_{pq} b_{q}
+                                \end{array}
+                        \right)
+                }
+                {\partial
+                    \left(
+                        \begin{array}{c}
+                            \left[
+                                \begin{array}{c}
+                                    X_{11} & X_{21} &\cdots & X_{p1} \\
+                                    X_{12} & X_{22} & \cdots & X_{p2} \\
+                                    \vdots & \vdots & \vdots & \vdots \\
+                                    X_{1q} & X_{2q} & \cdots & X_{pq}
+                                \end{array}
+                            \right]
+                        \end{array}
+                    \right)
+                } \\
+    &= \left[
+            \begin{array}{c}
+                a_1 b_1 & a_2 b_1 & \cdots & a_p b_1 \\
+                a_1 b_2 & a_2 b_2 & \cdots & a_p b_2 \\
+                \vdots & \vdots & \vdots & \vdots \\
+                a_1 b_q & a_2 b_q & \cdots & a_p b_q
+            \end{array}
+       \right] \\
+    &= b a^T
+\end{aligned}
 \end{equation}
 $$
 
