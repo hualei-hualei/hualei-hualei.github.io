@@ -24,12 +24,12 @@
 | 6 | / | / | / | 王琦 |
 | 7 | 春节假期 | 1.30 - 2.5 | / | / |
 | 8 | 春节假期 | 2.6 - 2.12 | / | / |
-| 9 | 袁成雨 | 王琦 | 苏歆琪 | / |
+| 9 | ~~袁成雨~~ | ~~王琦~~袁成雨 | ~~苏歆琪~~ | / |
 | 10 | 王琦 | 袁成雨 | 苏歆琪 | / |
 | 11 | 袁成雨 | 王琦 | 苏歆琪 | / |
 | 12 | 王琦 | 袁成雨 | 苏歆琪 | / |
 
-注：每周三19:30-21:00，阅读论文；每周六9:00-11:00，阅读书籍。
+注：~~每周三~~每周四19:30-21:00，阅读论文；每周六9:00-11:00，阅读书籍。
 
 ## 2. 论文阅读记录
 ### Week #02  
@@ -54,6 +54,13 @@ Ronneberger, Olaf, Philipp Fischer, and Thomas Brox. "U-Net: Convolutional Netwo
 
 阅读PPT：
 
+### Week #09
+论文题目：
+
+Long, Jonathan, Evan Shelhamer, and Trevor Darrell. "Fully Convolutional Networks for Semantic Segmentation." Paper presented at the IEEE conference on computer vision and pattern recognition, 2015.
+
+阅读PPT：
+
 
 ## 3. 《深度学习》阅读记录
 ### Week #01
@@ -71,7 +78,7 @@ Ronneberger, Olaf, Philipp Fischer, and Thomas Brox. "U-Net: Convolutional Netwo
 
 讲解PPT：
 
-### Week #04
+### ~~Week #04~~Week #10
 第4章：数值计算
 
 讲解PPT：
